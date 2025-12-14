@@ -1,0 +1,126 @@
+/* ---------- RESET ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #ffffff;
+  color: #111;
+  overflow-x: hidden;
+}
+
+/* ---------- HERO ---------- */
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Background photo */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: blur(14px) saturate(0.6) brightness(0.9);
+  transform: scale(1.1);
+  z-index: 1;
+}
+
+/* Soft overlay to calm things further */
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+/* Foreground content */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+/* Painting */
+.hero-art {
+  max-height: 70vh;
+  max-width: 90vw;
+  object-fit: contain;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.25);
+  transition: transform 1s ease;
+}
+
+/* Caption */
+.hero-caption {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.hero-caption h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.5rem, 4vw, 2.4rem);
+  letter-spacing: 0.03em;
+}
+
+.hero-caption p {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+  opacity: 0.6;
+  z-index: 3;
+  animation: float 2s ease-in-out infinite;
+}
+
+/* ---------- INTRO SECTION ---------- */
+.intro {
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 2rem;
+}
+
+.intro p {
+  max-width: 600px;
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  opacity: 0.8;
+}
+
+/* ---------- ANIMATIONS ---------- */
+@keyframes float {
+  0% { transform: translate(-50%, 0); }
+  50% { transform: translate(-50%, -10px); }
+  100% { transform: translate(-50%, 0); }
+}
+
+/* ---------- MOBILE TUNING ---------- */
+@media (max-width: 768px) {
+  .hero-art {
+    max-height: 60vh;
+  }
+
+  .hero-bg {
+    filter: blur(10px) saturate(0.6) brightness(0.95);
+  }
+}
