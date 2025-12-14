@@ -59,8 +59,7 @@ body {
   box-shadow: 0 30px 80px rgba(0,0,0,0.25);
   transition: transform 1s ease;
 }
-
-/* Caption */
+/* ---------- TYPEWRITER CAPTION ---------- */
 .hero-caption {
   margin-top: 1.5rem;
   text-align: center;
@@ -70,13 +69,16 @@ body {
   font-family: 'Playfair Display', serif;
   font-size: clamp(1.5rem, 4vw, 2.4rem);
   letter-spacing: 0.03em;
+  min-height: 1.3em;
 }
 
 .hero-caption p {
   margin-top: 0.5rem;
   font-size: 0.9rem;
   opacity: 0.7;
+  min-height: 1.2em;
 }
+
 
 /* Scroll indicator */
 .scroll-indicator {
