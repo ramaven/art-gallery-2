@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Art Gallery</title>
+  <title>Rama's Art Gallery</title>
 
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,41 +13,47 @@
 
 <body>
 
-  <!-- HERO SECTION -->
-  <section class="hero">
+<!-- TOP BAR (hidden initially) -->
+<header class="top-bar" id="topBar">
+  <div class="top-bar-left">
+    <div class="hamburger" id="hamburger">☰</div>
+    <nav class="dropdown-menu" id="dropdownMenu">
+      <a href="#gallery">Gallery</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+  <div class="top-bar-title">Rama's Art Gallery</div>
+</header>
 
-    <!-- Atmospheric background -->
-    <div class="hero-bg"
-         style="background-image: url('assets/hero-bg.jpeg');">
+<!-- HERO SECTION -->
+<section class="hero">
+  <div class="hero-bg" style="background-image: url('assets/hero-bg.jpeg');"></div>
+  <div class="hero-content">
+    <img src="assets/jeju-canola.jpeg" alt="Artwork title" class="hero-art" />
+    <div class="hero-caption">
+      <h1 data-text="Quiet Bloom">&nbsp;</h1>
+      <p data-text="Acrylic on canvas · 2025">&nbsp;</p>
     </div>
+  </div>
+  <div class="scroll-indicator">
+    <span class="arrow">↓</span>
+  </div>
+</section>
 
-    <!-- Foreground artwork -->
-    <div class="hero-content">
-      <img
-        src="assets/jeju-canola.jpeg"
-        alt="Artwork title"
-        class="hero-art"
-      />
+<!-- INTRO SECTION -->
+<section class="intro" id="about">
+  <p>An exploration of memory, nature, and stillness.</p>
+</section>
 
-      <div class="hero-caption">
-        <h1 data-text="Quiet Bloom">&nbsp;</h1>
-        <p data-text="Acrylic on canvas · 2025">&nbsp;</p>
-      </div>
+<section id="gallery">
+  <!-- Placeholder gallery content -->
+</section>
 
-    </div>
+<section id="contact">
+  <!-- Placeholder contact content -->
+</section>
 
-    <div class="scroll-indicator">
-      <span class="arrow">↓</span>
-    </div>
-  </section>
-
-  <!-- OPTIONAL NEXT SECTION -->
-  <section class="intro">
-    <p>
-      An exploration of memory, nature, and stillness.
-    </p>
-  </section>
-
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
