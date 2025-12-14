@@ -313,7 +313,7 @@ body {
 
 
 .gallery-item img {
-  max-width: 100%;
+  max-width: 50%;
   height: auto;
   box-shadow: 0 15px 40px rgba(0,0,0,0.15);
   border-radius: 0.5rem;
