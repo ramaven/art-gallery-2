@@ -61,3 +61,20 @@ window.addEventListener('click', (e) => {
     dropdownMenu.classList.remove('show');
   }
 });
+
+// ---------- FADE-IN RUNNER'S CAPTION ON SCROLL ----------
+const runnersCaption = document.querySelector('.runners-caption');
+
+if (runnersCaption) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target); // optional: stop observing after it appears
+      }
+    });
+  }, { threshold: 0.3 }); // 30% visible before triggering
+
+  observer.observe(runnersCaption);
+}
+

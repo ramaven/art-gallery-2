@@ -254,9 +254,17 @@ body {
   box-shadow: 0 20px 60px rgba(0,0,0,0.2);
 }
 
+/* Initial hidden state */
 .runners-caption {
-  margin-top: 1.2rem;
-  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+/* When visible */
+.runners-caption.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .runners-caption h2 {
