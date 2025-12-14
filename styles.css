@@ -333,6 +333,19 @@ body {
   text-align: center;
 }
 
+.gallery-item .caption p:first-child {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.gallery-item .caption p:last-child {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: #555;
+}
+
 /* ---------- MOBILE TUNING ---------- */
 @media (max-width: 768px) {
   .runners-art {
