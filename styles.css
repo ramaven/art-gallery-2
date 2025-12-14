@@ -291,17 +291,26 @@ body {
 }
 
 .gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 3rem;
-  justify-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem; /* vertical space between rows */
+  max-width: 1000px;
+  margin: 0 auto;
 }
+
 
 .gallery-item {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  gap: 2rem;
+  padding: 1rem 2rem;
+
 }
+
+.gallery-item:nth-child(even) {
+  flex-direction: row-reverse; /* caption on left, image on right */
+}
+
 
 .gallery-item img {
   max-width: 100%;
@@ -320,11 +329,22 @@ body {
   font-size: 0.95rem;
   opacity: 0.8;
   line-height: 1.4;
+  max-width: 300px;
+  text-align: center;
 }
 
 /* ---------- MOBILE TUNING ---------- */
 @media (max-width: 768px) {
   .runners-art {
     max-height: 50vh;
+  }
+
+  .gallery-item {
+      flex-direction: column !important;
+      text-align: center;
+    }
+
+  .gallery-item .caption {
+      max-width: 100%;
   }
 }
