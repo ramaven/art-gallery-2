@@ -1,10 +1,11 @@
 window.addEventListener('load', () => {
   const title = document.querySelector('.hero-caption h1');
   const subtitle = document.querySelector('.hero-caption p');
+  const arrow = document.querySelector('.scroll-indicator');
 
   if (!title || !subtitle) return;
 
-  function typeText(element, speed, delay) {
+  function typeText(element, speed, delay, onComplete) {
     const text = element.dataset.text;
     let index = 0;
 
@@ -17,6 +18,7 @@ window.addEventListener('load', () => {
 
         if (index >= text.length) {
           clearInterval(interval);
+          if (onComplete) onComplete();
         }
       }, speed);
     }, delay);
@@ -24,7 +26,11 @@ window.addEventListener('load', () => {
 
   // Sequence
   typeText(title, 90, 800);
-  typeText(subtitle, 45, 2200);
+  typeText(subtitle, 45, 2200, () => {
+    if (arrow) {
+      arrow.classList.add('visible');
+    }
+  });
 });
 
 /* Parallax */

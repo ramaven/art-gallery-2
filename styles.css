@@ -80,17 +80,35 @@ body {
 }
 
 
-/* Scroll indicator */
 .scroll-indicator {
   position: absolute;
   bottom: 2rem;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 1.5rem;
-  opacity: 0.6;
+  opacity: 0;
   z-index: 3;
+  pointer-events: none;
+  transition: opacity 1.2s ease;
+}
+
+.scroll-indicator.visible {
+  opacity: 0.6;
+}
+
+/* Animate ONLY the arrow */
+.arrow {
+  display: inline-block;
+  font-size: 1.5rem;
   animation: float 2s ease-in-out infinite;
 }
+
+@keyframes float {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+
 
 /* ---------- INTRO SECTION ---------- */
 .intro {
@@ -107,13 +125,6 @@ body {
   font-size: 1.1rem;
   line-height: 1.7;
   opacity: 0.8;
-}
-
-/* ---------- ANIMATIONS ---------- */
-@keyframes float {
-  0% { transform: translate(-50%, 0); }
-  50% { transform: translate(-50%, -10px); }
-  100% { transform: translate(-50%, 0); }
 }
 
 /* ---------- MOBILE TUNING ---------- */
