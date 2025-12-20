@@ -354,7 +354,7 @@ body {
   margin: 0 auto;
 }
 
-.gallery-item:nth-child(even) {
+.gallery-block:nth-child(even) .gallery-item {
   flex-direction: row-reverse; /* caption on left, image on right */
 }
 
