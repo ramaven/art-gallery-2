@@ -360,8 +360,11 @@ body {
 
 
 .gallery-item img {
-  max-width: 60%;
+  max-width: min(60%, 600px);   /* prevents huge horizontals */
+  max-height: 70vh;             /* prevents huge verticals */
   height: auto;
+  width: auto;
+  object-fit: contain;
   box-shadow: 0 15px 40px rgba(0,0,0,0.15);
   border-radius: 0.5rem;
   transition: transform 0.3s ease;
@@ -374,7 +377,7 @@ body {
 }
 
 .gallery-item .caption {
-  margin-top: 0.5rem;
+  margin: 0.5rem 0.5rem;
   font-size: 0.95rem;
   opacity: 0.8;
   line-height: 1.4;
