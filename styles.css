@@ -412,4 +412,8 @@ body {
   .gallery-item .caption {
       max-width: 100%;
   }
+
+  .gallery-bg.active {
+      transform: scale(1.04) translateY(-1vh); /* smaller parallax */
+   }
 }
