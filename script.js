@@ -2,21 +2,25 @@
 const galleryItems = [
   {
     image: 'assets/evening-forest.jpeg',
+    bg:  'assets/rolling-hills.jpeg',
     title: 'Evening Glow',
     subtitle: 'Acrylic on canvas · 2023'
   },
   {
     image: 'assets/italy-abstract.jpeg',
+    bg: 'assets/ny-skyline.jpg',
     title: 'Astounding Architecture',
     subtitle: 'Acrylic on canvas · 2025'
   },
   {
     image: 'assets/beach-day.jpeg',
+    bg: 'assets/sandy-beach.jpg',
     title: "A Summer's Coast",
     subtitle: 'Watercolor · 2024'
   },
   {
     image: 'assets/mystical-tree.jpeg',
+    bg: 'assets/aurora-sky.jpg',
     title: 'Mystical Branches',
     subtitle: 'Acrylic on canvas · 2023'
   }
@@ -30,7 +34,7 @@ galleryItems.forEach((item, index) => {
   wrapper.classList.add('gallery-block');
 
   wrapper.innerHTML = `
-    <div class="gallery-bg" style="background-image:url('${item.image}')"></div>
+    <div class="gallery-bg" style="background-image:url('${item.bg}')"></div>
 
     <div class="gallery-item">
       <img src="${item.image}" alt="${item.title}">

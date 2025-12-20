@@ -315,7 +315,7 @@ body {
   inset: 0;
   background-size: cover;
   background-position: center center;
-  filter: blur(18px) saturate(0.6) brightness(0.8);
+  filter: blur(18px) saturate(0.4) brightness(1);
   transform: scale(1.12);
   opacity: 1;
   transition: opacity 1.4s ease, transform 1s ease;
@@ -365,10 +365,12 @@ body {
   box-shadow: 0 15px 40px rgba(0,0,0,0.15);
   border-radius: 0.5rem;
   transition: transform 0.3s ease;
+  filter: brightness(0.95);
 }
 
 .gallery-item img:hover {
   transform: scale(1.03);
+  filter: brightness(1);
 }
 
 .gallery-item .caption {
