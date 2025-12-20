@@ -25,20 +25,25 @@ const galleryItems = [
 // Function to render gallery
 const galleryGrid = document.getElementById('galleryGrid');
 
-galleryItems.forEach(item => {
-  const galleryItem = document.createElement('div');
-  galleryItem.classList.add('gallery-item');
+galleryItems.forEach((item, index) => {
+  const wrapper = document.createElement('div');
+  wrapper.classList.add('gallery-block');
 
-  galleryItem.innerHTML = `
-    <img src="${item.image}" alt="${item.title}">
-    <div class="caption">
-      <p>${item.title}</p>
-      <p>${item.subtitle}</p>
+  wrapper.innerHTML = `
+    <div class="gallery-bg" style="background-image:url('${item.image}')"></div>
+
+    <div class="gallery-item">
+      <img src="${item.image}" alt="${item.title}">
+      <div class="caption">
+        <p>${item.title}</p>
+        <p>${item.subtitle}</p>
+      </div>
     </div>
   `;
 
-  galleryGrid.appendChild(galleryItem);
+  galleryGrid.appendChild(wrapper);
 });
+
 
 
 // ---------- TYPEWRITER ----------
@@ -129,3 +134,21 @@ if (runnersCaption) {
 
   observer.observe(runnersCaption);
 }
+
+// ---------- GALLERY BACKGROUND FADE + PARALLAX ----------
+const galleryBackgrounds = document.querySelectorAll('.gallery-bg');
+
+if (galleryBackgrounds.length) {
+  const galleryObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+      } else {
+        entry.target.classList.remove('active');
+      }
+    });
+  }, { threshold: 0.35 });
+
+  galleryBackgrounds.forEach(bg => galleryObserver.observe(bg));
+}
+
