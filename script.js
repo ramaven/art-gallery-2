@@ -1,3 +1,46 @@
+// Array of gallery items
+const galleryItems = [
+  {
+    image: 'assets/evening-forest.jpeg',
+    title: 'Evening Glow',
+    subtitle: 'Acrylic on canvas · 2023'
+  },
+  {
+    image: 'assets/italy-abstract.jpeg',
+    title: 'Astounding Architecture',
+    subtitle: 'Acrylic on canvas · 2025'
+  },
+  {
+    image: 'assets/beach-day.jpeg',
+    title: "A Summer's Coast",
+    subtitle: 'Watercolor · 2024'
+  },
+  {
+    image: 'assets/mystical-tree.jpeg',
+    title: 'Mystical Branches',
+    subtitle: 'Acrylic on canvas · 2023'
+  }
+];
+
+// Function to render gallery
+const galleryGrid = document.getElementById('galleryGrid');
+
+galleryItems.forEach(item => {
+  const galleryItem = document.createElement('div');
+  galleryItem.classList.add('gallery-item');
+
+  galleryItem.innerHTML = `
+    <img src="${item.image}" alt="${item.title}">
+    <div class="caption">
+      <p>${item.title}</p>
+      <p>${item.subtitle}</p>
+    </div>
+  `;
+
+  galleryGrid.appendChild(galleryItem);
+});
+
+
 // ---------- TYPEWRITER ----------
 window.addEventListener('load', () => {
   const title = document.querySelector('.hero-caption h1');
