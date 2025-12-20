@@ -27,6 +27,15 @@ window.addEventListener('load', () => {
   typeText(subtitle, 45, 2200, () => {
     if (arrow) arrow.classList.add('visible');
   });
+
+  // REMOVE OVERLAY AFTER FADE
+  const fadeOverlay = document.querySelector(".hero-fade-overlay");
+  if (fadeOverlay) {
+    setTimeout(() => {
+      fadeOverlay.remove();
+    }, 2000);
+  }
+
 });
 
 // ---------- PARALLAX ----------
@@ -47,7 +56,7 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// ---------- HAMBURGER TOGGLE (MOBILE) ----------
+// ---------- HAMBURGER ----------
 const hamburger = document.getElementById('hamburger');
 const dropdownMenu = document.getElementById('dropdownMenu');
 
@@ -55,14 +64,14 @@ hamburger.addEventListener('click', () => {
   dropdownMenu.classList.toggle('show');
 });
 
-// Close menu if clicking outside (mobile)
+// Close if clicking outside
 window.addEventListener('click', (e) => {
   if (!dropdownMenu.contains(e.target) && !hamburger.contains(e.target)) {
     dropdownMenu.classList.remove('show');
   }
 });
 
-// ---------- FADE-IN RUNNER'S CAPTION ON SCROLL ----------
+// ---------- RUNNERS FADE ----------
 const runnersCaption = document.querySelector('.runners-caption');
 
 if (runnersCaption) {
@@ -70,11 +79,10 @@ if (runnersCaption) {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-        observer.unobserve(entry.target); // optional: stop observing after it appears
+        observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.3 }); // 30% visible before triggering
+  }, { threshold: 0.3 });
 
   observer.observe(runnersCaption);
 }
-
